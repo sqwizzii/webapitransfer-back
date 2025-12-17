@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Core</name>
+    </assembly>
+    <members>
+        <member name="P:Core.Models.Account.LoginModel.Email">
+            <summary>
+            Електронна пошта користувача
+            </summary>
+            <example>admin@gmail.com</example>
+        </member>
+        <member name="P:Core.Models.Account.LoginModel.Password">
+            <summary>
+            Пароль користувача
+            </summary>
+            <example>Admin123</example>
+        </member>
+    </members>
+</doc>
