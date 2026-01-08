@@ -24,11 +24,11 @@ function slugify(input: string) {
 
 function buildImageUrl(image: string) {
     if (!image) return "";
-    // якщо бек повертає вже URL — просто використаємо його
+
     if (image.startsWith("http")) return image;
 
     const base = import.meta.env.VITE_API_URL; // напр. http://localhost:5055
-    const dir = "images"; // у вас у бекенді DirImageName = images
+    const dir = "images";
     return `${base}/${dir}/${image}`;
 }
 
@@ -71,7 +71,7 @@ export default function Admin() {
             name: c.name ?? "",
             code: c.code ?? "",
             slug: c.slug ?? "",
-            image: null, // файл треба вибрати заново, якщо хочеш змінити
+            image: null,
         });
     }
 
@@ -204,9 +204,7 @@ export default function Admin() {
                                 className="w-full rounded-xl border px-3 py-2"
                                 onChange={(e) => setField("image", e.target.files?.[0] ?? null)}
                             />
-                            <div className="text-xs text-neutral-500">
-                                Якщо редагуєш — файл вибирай лише якщо хочеш змінити картинку
-                            </div>
+                           
                         </div>
 
                         <button

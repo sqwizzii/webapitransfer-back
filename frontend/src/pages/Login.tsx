@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { api } from "../shared/api";
 import { setToken } from "../shared/auth";
 
@@ -34,7 +34,7 @@ export default function Login() {
             <h1 className="text-2xl font-semibold">Login</h1>
 
             {error && (
-                <div className="rounded-lg border p-3 text-red-600">
+                <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-red-700">
                     {String(error)}
                 </div>
             )}
@@ -62,6 +62,16 @@ export default function Login() {
                     {loading ? "Loading..." : "Login"}
                 </button>
             </form>
+
+            <div className="flex items-center justify-between text-sm">
+                <Link to="/forgot-password" className="underline">
+                    Forgot password?
+                </Link>
+
+                <Link to="/reset-password" className="underline">
+                    Reset password
+                </Link>
+            </div>
         </div>
     );
 }
